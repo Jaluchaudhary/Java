@@ -1,0 +1,89 @@
+/**
+* RPSGameDraft
+* @author Jalu
+* @version1
+* see
+*/
+ import java.util.Random ;  
+ import java.util.Scanner; 
+ 
+   
+     public class RPSGameDraft
+        {
+        public static void main(String[]args)
+         {
+                 
+       Random generator = new Random();
+       Scanner keyboard = new Scanner(System.in);
+       
+        char playerChoice;  //Leave all letters as chars      
+        int player2Value;          
+        int count = 0;            
+        int outerCount = 0;       
+        int player1Score = 0;     
+        int player2Score = 0;     
+        String player1Shot = " "; //will print out "R","P","S"  //these will need to be chars
+        char player2Shot = ' '; //will print out "R","P","S"  //these will need to be chars  
+        int shot = 0;               
+        String runProgram = " ";
+        
+        int gameCounter = 0;
+        gameCounter = gameCounter + 1;
+              
+              System.out.println ("Game" + gameCounter);
+              System.out.println("Please enter play if you want to play the game or anything else to Stop.");
+              runProgram = keyboard.nextLine();
+              runProgram = runProgram.toUpperCase();
+              while(runProgram.equals("PLAY"))
+              {           
+             
+                //you won't be adding 0 to any score 
+               /*This does nothing, sets it to itself without changing anything*/
+               
+               if(playerChoice == 'R'){
+                 //draw, no points given
+                 System.out.println("Draw");
+               } else if(playerChoice == 'P'){
+                 //player one is paper, player two is rock, player one wins
+                 player1Score = player1Score + 1;
+               } else {
+                 //player one is scissors, player two is rock, player two wins
+                 player2Score = player2Score + 1;
+               }
+               
+             }
+             if (player2Value == 1) 
+             {
+               player2Shot = 'P';
+               /*Does nothing, sets score to itself without any change*/
+               
+             }
+           
+            if (player2Value == 2) 
+            {
+               player2Shot = 'S';
+               //you won't be adding 2 to any score
+               /*Does nothing, sets score to itself without any change*/
+              
+            }
+             System.out.println("Please enter play if you want to play the game again or anything else to Stop.");
+             runProgram = keyboard.nextLine();
+             runProgram = runProgram.toUpperCase();
+         }// end of while loop
+          
+          /*
+          *	Print out the two players' scores
+          *	~~~Final Score~~~
+          * Your Score__  My Score__
+          */
+          
+      /*	Print out who won the most and by how much, depending on who has the higher score
+       *	Congratulations! You outplayed me by (player1Score - player2Score)games! 			(player1Score > player2Score)
+       *    OR You're a great opponent! I beat you by only (player2Score - player1Score)games.  (player2Score > player1Score)
+       *	OR We're all tied upwith (player1Score) games apiece. Let's play again soon. 		(player1Score == player2Score)
+       */ 
+          
+     }// end of main
+   }// end of class
+      
+     
